@@ -7,7 +7,10 @@ module.exports = {
   messages: {
     // a function which handles a get request for all messages
     get: function (req, res) {
-      //models.messages.get()
+
+      models.messages.get(function(queryRes){
+        res.send(queryRes);
+      });
     }, 
     // a function which handles posting a message to the database
     post: function (req, res) {
@@ -19,7 +22,11 @@ module.exports = {
 
   users: {
     // Ditto as above
-    get: function (req, res) {},
+    get: function (req, res) {
+      models.users.get(function(queryRes){
+        res.send(queryRes);
+      });
+    },
     post: function (req, res) {
       models.users.post(req.body, function(queryRes){
         res.send(queryRes);
