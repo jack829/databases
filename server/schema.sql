@@ -49,7 +49,7 @@ CREATE TABLE `messages` (
   `id` INTEGER(5) AUTO_INCREMENT,
   `username` VARCHAR(50),
   `text` VARCHAR(150),
-  `time` DATETIME(18),
+  `time` DATETIME,
   `roomname` VARCHAR(50) DEFAULT 'lobby',
   PRIMARY KEY (`id`)
 );
@@ -92,7 +92,7 @@ CREATE TABLE `usernames` (
 CREATE TABLE `friends` (
   `user_id` INTEGER(3),
   `friend_id` INTEGER(3),
-  PRIMARY KEY (`user-id`)
+  PRIMARY KEY (`user_id`)
 );
 
 -- ---
