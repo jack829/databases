@@ -6,12 +6,15 @@ var queryString;
 module.exports = {
   messages: {
     // a function which produces all the messages
-    get: function (callback) {
+    get: function (data, callback) {
+      //queryString= "select * from messages where roomname ="+'"'+data.roomname+'"';
+
       queryString= "select * from messages";
       db.query(queryString, function(err,data){
         if(err){
           console.log("err");
         }
+        
         callback(data);
       });
     }, 
